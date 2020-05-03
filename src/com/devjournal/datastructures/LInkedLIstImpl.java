@@ -5,7 +5,7 @@ public class LInkedLIstImpl {
 	// Insertion -> Begin, End, Pos
 	// Deletion -> Begin, End, Pos
 
-	class Node {
+	private class Node {
 		int data;
 		Node next;
 
@@ -15,9 +15,9 @@ public class LInkedLIstImpl {
 		}
 	}
 
-	Node head = null;
+	private Node head = null;
 
-	private void insertAtBegin(int element) {
+	public void insertAtBegin(int element) {
 		Node newNode = new Node(element, null);
 		if (head == null) {
 			head = newNode;
@@ -27,7 +27,7 @@ public class LInkedLIstImpl {
 		head = newNode;
 	}
 
-	private void insertAtEnd(int element) {
+	public void insertAtEnd(int element) {
 		Node newNode = new Node(element, null);
 		if (head == null) {
 			head = newNode;
@@ -40,7 +40,7 @@ public class LInkedLIstImpl {
 		temp.next = newNode;
 	}
 
-	private void insertAtPos(int element, int pos) {
+	public void insertAtPos(int element, int pos) {
 		if (pos < 1) {
 			System.out.println("Invalid insert position");
 			return;
@@ -67,7 +67,7 @@ public class LInkedLIstImpl {
 		temp.next = newNode;
 	}
 
-	private void deleteAtBegin() {
+	public void deleteAtBegin() {
 		if (head == null) {
 			System.out.println("Empty list");
 			return;
@@ -75,7 +75,7 @@ public class LInkedLIstImpl {
 		head = head.next;
 	}
 
-	private void deleteAtEnd() {
+	public void deleteAtEnd() {
 		if (head == null) {
 			System.out.println("Empty list");
 			return;
@@ -90,7 +90,7 @@ public class LInkedLIstImpl {
 		temp.next = null;
 	}
 
-	private void deleteAtPos(int pos) {
+	public void deleteAtPos(int pos) {
 		if (pos < 1) {
 			System.out.println("Invalid insert position");
 			return;
@@ -115,7 +115,7 @@ public class LInkedLIstImpl {
 		temp.next = temp.next.next;
 	}
 
-	private int getSize() {
+	public int getSize() {
 		Node temp = head;
 		int size = 0;
 		while (temp != null) {
@@ -125,7 +125,7 @@ public class LInkedLIstImpl {
 		return size;
 	}
 
-	private void reverseList() {
+	public void reverseList() {
 		Node prev = null;
 		Node current = head;
 		Node next;
@@ -138,7 +138,7 @@ public class LInkedLIstImpl {
 		head = prev;
 	}
 
-	private void recursiveReverse(Node p) {
+	public void recursiveReverse(Node p) {
 		if (p.next == null) {
 			head = p;
 			return;
@@ -149,7 +149,7 @@ public class LInkedLIstImpl {
 
 	}
 
-	private void print() {
+	public void print() {
 		Node temp = head;
 		while (temp != null) {
 			System.out.print(temp.data + " -> ");
@@ -158,7 +158,7 @@ public class LInkedLIstImpl {
 		System.out.println("null");
 	}
 
-	private void recursivePrint(Node p) {
+	public void recursivePrint(Node p) {
 		if (p != null) {
 			System.out.print(p.data + " -> ");
 			recursivePrint(p.next);
@@ -166,7 +166,7 @@ public class LInkedLIstImpl {
 			System.out.println("null");
 	}
 	
-	private void recursiveReversePrint(Node p) {
+	public void recursiveReversePrint(Node p) {
 		if (p != null) {
 			recursiveReversePrint(p.next);
 			System.out.print(p.data + " -> ");

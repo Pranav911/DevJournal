@@ -4,11 +4,11 @@ public class ArrayImpl {
 	// 1,2,3,4,5, 
 	// Insertion -> end, begin, pos <-Deletion
 	
-	int capacity = 5;
-	int[] arr = new int[capacity];
-	int size = -1;
+	private int capacity = 5;
+	private int[] arr = new int[capacity];
+	private int size = -1;
 	
-	private void insertAtBegin(int element) {
+	public void insertAtBegin(int element) {
 		if(size+1==capacity) {
 			resize();
 		}
@@ -19,7 +19,7 @@ public class ArrayImpl {
 		size++;
 	}
 	
-	private void insertAtEnd(int element) {
+	public void insertAtEnd(int element) {
 		if(size+1==capacity) {
 			resize();
 		}
@@ -27,7 +27,7 @@ public class ArrayImpl {
 		size++;
 	}
 	
-	private void insertAtPos(int element, int pos) {
+	public void insertAtPos(int element, int pos) {
 		if(pos<1 || pos>size+2) {
 			System.out.println("Invalid position");
 			return;
@@ -43,7 +43,7 @@ public class ArrayImpl {
 		
 	}
 	
-	private void deleteAtBegin() {
+	public void deleteAtBegin() {
 		if(size==-1) {
 			System.out.println("underflow");
 			return;
@@ -54,7 +54,7 @@ public class ArrayImpl {
 		size--;
 	}
 	
-	private void deleteAtEnd() {
+	public void deleteAtEnd() {
 		if(size==-1) {
 			System.out.println("Underflow");
 			return;
@@ -62,7 +62,7 @@ public class ArrayImpl {
 		size--;
 	}
 	
-	private void deleteAtPos(int pos) {
+	public void deleteAtPos(int pos) {
 		if(size==-1) {
 			System.out.println("Underflow");
 			return;
@@ -78,7 +78,7 @@ public class ArrayImpl {
 		
 	}
 
-	private void resize() {
+	public void resize() {
 		int[] tempArr = new int[capacity*2];
 		for(int i=0; i<capacity; i++) {
 			tempArr[i] = arr[i];
@@ -87,11 +87,19 @@ public class ArrayImpl {
 		capacity *= 2;
 	}
 	
-	private void print() {
+	public void print() {
 		for(int i=0; i<=size; i++) {
 			System.out.print(arr[i] + " ");
 		}
 		System.out.println();
+	}
+	
+	public boolean isEmpty() {
+		return size==-1?true:false;
+	}
+	
+	public int peek() {
+		return isEmpty()?-111:arr[size];
 	}
 	
 	public static void main(String[] args) {
