@@ -173,6 +173,14 @@ public class LInkedLIstImpl {
 		}
 	}
 
+	public boolean isEmpty() {
+		return head==null?true:false;
+	}
+	
+	public int peek() {
+		return isEmpty()?-111:head.data;
+	}
+
 	public static void main(String[] args) {
 		LInkedLIstImpl ob = new LInkedLIstImpl();
 		ob.insertAtBegin(3);
@@ -192,4 +200,5 @@ public class LInkedLIstImpl {
 		ob.recursivePrint(ob.head);
 		ob.recursiveReversePrint(ob.head);
 	}
+
 }
