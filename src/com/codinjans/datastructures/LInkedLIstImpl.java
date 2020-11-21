@@ -1,4 +1,4 @@
-package com.devjournal.datastructures;
+package com.codinjans.datastructures;
 
 public class LInkedLIstImpl {
 	// (head)0->1->2->3->null

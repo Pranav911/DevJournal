@@ -1,30 +1,30 @@
-package com.devjournal.datastructures;
+package com.codinjans.datastructures;
 
-public class StackLLImpl {
-LInkedLIstImpl llStack = new LInkedLIstImpl();
+public class StackArrImpl {
+	ArrayImpl arrStack = new ArrayImpl();
 	
 	public void push(int element) {
-		llStack.insertAtBegin(element);;
+		arrStack.insertAtEnd(element);
 	}
 	
 	public void pop() {
-		llStack.deleteAtBegin();
+		arrStack.deleteAtEnd();
 	}
 	
 	public int peek() {
-		return llStack.peek();
+		return arrStack.peek();
 	}
 	
 	public boolean isEmpty() {
-		return llStack.isEmpty();
+		return arrStack.isEmpty();
 	}
 	
 	public void print() {
-		llStack.print();
+		arrStack.print();
 	}
 	
 	public static void main(String[] args) {
-		StackLLImpl stack = new StackLLImpl();
+		StackArrImpl stack = new StackArrImpl();
 		stack.push(1);
 		stack.push(2);
 		stack.push(3);
